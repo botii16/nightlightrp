@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
     <link rel="apple-touch-icon" href="img/Logo1.png">
     <link rel="icon" sizes="16x16 32x32 64x64" href="img/Logo1.png">
     <link rel="icon" href="img/Logo1.png">
-
+    <link rel="stylesheet" href="style.css">
 
     <link rel="stylesheet" href="css/ok.css">
 </head>
 <title>Night Light Roleplay</title>
 <body>
-
-    <video autoplay muted loop id="myVideo">
-        <source src="video/noballs.mp4" type="video/mp4">
-      </video>
-      
+  <div id="progressbar"></div>
+  <div id="scrollPath"></div>
+    <section>
+      <video src="video/noballs.mp4" autoplay="" loop="" muted=""></video>
+    </section>
+    <section>
       <div class="content">
-        <h1 class="nightlight">Night Light Roleplay</h1>
-        <h2 class="hamarosan">Hamarosan...</h2>
-      </div>
-      
-      <audio controls autoplay loop class="audio">
-        <source src="video/ez.mp3" type="audio/mpeg">
-      A böngésződ nem támogatja a hanglejátszást vagy letíltotta autómatikusans.
-      </audio>
-
+        <h2>Night Light Roleplay</h2>
+        <a href="discord.html">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Discord
+        </a>
+        </div>
+    </section>
+    <script type="text/javascript">
+      let video = document.querySelector('video');
+      window.addEventListener('scroll' , function(){
+        let value = 1 + window.scrollY/-600;
+        video.style.opacity = value;
+      })
+    </script>
+    <script type="text/javascript">
+    let progress = document.getElementById('progressbar');
+    let totalHeight = document.body.scrollHeight - window.innerHeight;
+    window.onscroll = function(){
+      let progressHeight = (window.pageYOffset / totalHeight) * 100;
+      progress.style.height = progressHeight + "%";
+    }
+    </script>
 </body>
 
 </html>
